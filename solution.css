@@ -1,0 +1,25 @@
+A better approach to solving specificity issues is to use more specific CSS selectors. For example, instead of:
+
+```css
+div p {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+```
+
+You could use:
+
+```css
+.specific-div p {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+```
+
+This way, the specificity is improved, making the styles less prone to conflicts. Also, avoid `!important` as much as possible. If you must use it, try to understand why it's necessary, so you can fix the underlying CSS conflict instead of just masking it.
