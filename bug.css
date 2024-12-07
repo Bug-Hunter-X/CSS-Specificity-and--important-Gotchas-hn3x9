@@ -1,0 +1,21 @@
+The CSS specificity rules can sometimes lead to unexpected results when multiple styles affect the same element. For instance, consider the following code:
+
+```css
+div p {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+```
+
+In this case, the `p` element will be red, because the second rule is more specific (it directly targets `p`).  However, adding an inline style might override the style rules in unexpected ways:
+
+```html
+<div>
+  <p style="color: green;">This text is green.</p>
+</div>
+```
+
+The inline style (`color: green;`) has higher specificity than both of the previous styles and will override them. This can create debugging challenges if not anticipated. Another issue is the use of !important in CSS.  While it allows to override any other rule, its overuse can make the CSS very difficult to maintain and understand.
